@@ -2,12 +2,10 @@ import { Avatar, AvatarGroup } from '@mui/material'
 import _ from 'lodash'
 import React from 'react'
 
-
-interface Avatarstype{
+interface Avatarstype {
   alt: string;
   image: string;
 }
-
 
 const avatars: Avatarstype[] = [
   {
@@ -69,7 +67,7 @@ const Avatars = () => {
   return (
     <AvatarGroup max={4}>
       {
-        _.map(avatars, (avatar,index) => (
+        _.map(avatars, (avatar, index) => (
           <Avatar alt={avatar.alt} src={avatar.image} key={index} />
         ))
       }

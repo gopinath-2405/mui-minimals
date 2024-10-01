@@ -21,32 +21,32 @@ const FolderCard = () => {
   return (
     <Grid container>
       <Grid item xs={12} sm={6} md={4} lg={3}>
-      <Card>
-        <CardContent>
-          <Grid container sx={{display: 'flex' , flexFlow: 'column' }}>
-            <Grid item xs={12}>
-              <Box sx={{display: 'flex' ,justifyContent: 'space-between' }}>
-                <FolderIcon sx={{color: 'rgb(249,181,82)' , fontSize: 'xxx-large' }} />
-                <Box sx={{display: 'flex' , alignItems: 'center'}}>
-                  <Rating name='customized-1'  max={1} sx={{fontSize: 'xx-large'}} />
-                  <IconMenu/>
+        <Card>
+          <CardContent>
+            <Grid container sx={{ display: 'flex', flexFlow: 'column' }}>
+              <Grid item xs={12}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <FolderIcon sx={{ color: 'rgb(249,181,82)', fontSize: 'xxx-large' }} />
+                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Rating name='customized-1' max={1} sx={{ fontSize: 'xx-large' }} />
+                    <IconMenu />
+                  </Box>
                 </Box>
-              </Box>
+              </Grid>
+              <Grid item>
+                <Typography variant="h5" component="div" sx={{ fontWeight: 'bold' }}  >
+                  Docs
+                </Typography>
+                <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
+                  2.24Gb {bull} 100 files
+                </Typography>
+              </Grid>
+              <Grid item sx={{ display: 'flex', justifyContent: 'flex-start' }}  >
+                <Avatars />
+              </Grid>
             </Grid>
-            <Grid item>
-            <Typography variant="h5" component="div" sx={{fontWeight: 'bold'}}  >
-               Docs
-            </Typography>
-            <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}> 
-              2.24Gb {bull} 100 files
-            </Typography>
-            </Grid>
-            <Grid item sx={{display: 'flex' , justifyContent: 'flex-start'}}  >
-              <Avatars/>
-            </Grid>
-          </Grid>    
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
       </Grid>
     </Grid>
   )
