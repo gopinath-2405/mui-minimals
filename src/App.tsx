@@ -1,13 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import FolderCard from './minimals/folder-card/FolderCard';
+import CustomerDetails from './minimals/customer-details/CustomerDetails';
 
 
 function App() {
   return (
-    <FolderCard />
-
+    <CustomerDetails />
   );
 }
 
