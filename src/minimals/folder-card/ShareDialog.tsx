@@ -1,5 +1,6 @@
 import { Avatar, Button, DialogTitle, InputAdornment, List, ListItem, ListItemAvatar, ListItemText, OutlinedInput, Typography } from '@mui/material';
-import Dialog from '@mui/material/Dialog'
+import Dialog from '@mui/material/Dialog';
+import Tooltip from '@mui/material/Tooltip';
 import details from './details';
 import Grid from '@mui/material/Grid';
 import LinkIcon from '@mui/icons-material/Link';
@@ -20,39 +21,37 @@ const ShareDialog = (props: ShareDialogProps) => {
     setValue(e.target.value);
   }
   return (
-    <Dialog open={openShare} onClose={handleShareClose}>
+    <Dialog open={openShare} onClose={handleShareClose} sx={{width: '100%'}}>
       <DialogTitle>Invite</DialogTitle>
       <OutlinedInput placeholder='Email' sx={{ marginLeft: 2, marginRight: 2 }} value={value} onChange={handleChange}
         endAdornment={
           <InputAdornment position="end">
             {
-              value ? <Button variant='contained' sx={{ backgroundColor: 'black', fontWeight: 'bold' }} >Send Invite</Button> : <Button variant='contained' sx={{ fontWeight: 'bold' }} disabled>Send Invite</Button>
+              value ? <Button variant='contained' sx={{ backgroundColor: 'black', fontWeight: 'bold' }}>Send Invite</Button> : <Button variant='contained' sx={{ fontWeight: 'bold' }} disabled>Send Invite</Button>
             }
           </InputAdornment>
         }
       />
-      <Grid item sx={{ overflow: 'scroll', scrollbarWidth: 'none', marginRight: 1, scrollBehavior: 'smooth' }}
+      <Grid container sx={{ overflowY: 'scroll', scrollbarWidth: 'none', scrollBehavior: 'smooth' }}
       >
         <List>
           {
             _.map(details, detail => (
               <ListItem disableGutters key={detail.id}>
                 <Grid container sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <Grid item xs={9} sx={{ flex: 1 }}>
-                    <ListItem>
-                      <Grid container sx={{ display: 'flex', justifyContent: 'left', alignItems: 'center' }}>
-                        <Grid item xs={3}>
+                  <Grid item xs={8} sx={{ flex: 1 }}>
+                      <Grid container sx={{ display: 'flex', justifyContent: 'left', alignItems: 'center' , ml: 1 }}>
+                        <Grid item xs={2.5}>
                           <ListItemAvatar >
                             <Avatar src={detail.avatar} alt={detail.name} />
                           </ListItemAvatar>
                         </Grid>
-                        <Grid item xs={8.5} sx={{ whiteSpace: 'nowrap', overflowX: "hidden", textOverflow: 'ellipsis' }}>
-                          <ListItemText primary={detail.name} secondary={detail.email} sx={{ display: 'flex', justifyContent: 'left', flexFlow: 'column', whiteSpace: 'nowrap', overflowX: "hidden", textOverflow: 'ellipsis' }} />
+                        <Grid item xs={8.5}  >
+                          <ListItemText primary={<Typography variant='h6'>{detail.name}</Typography>} secondary={<Tooltip title={detail.email}><Typography sx={{whiteSpace: 'nowrap' , overflowX: 'hidden' , textOverflow: 'ellipsis' }}>{detail.email}</Typography></Tooltip>} />
                         </Grid>
                       </Grid>
-                    </ListItem>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={4} sx={{width: '100%'}}>
                     <ShareSelect />
                   </Grid>
                 </Grid>
