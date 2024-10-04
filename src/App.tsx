@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import CustomerDetails from './minimals/customer-details/CustomerDetails';
+import GroupAvatar from './minimals/group-avatar/GroupAvatar';
 
 
 function App() {
-  return (
-    <CustomerDetails />
+  return ( 
+    <GroupAvatar/>
   );
 }
 
