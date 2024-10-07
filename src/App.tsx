@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import InvoiceTable from './minimals/invoice-table/InvoiceTable';
+import AvatarDetails from './minimals/avatar-details/AvatarDetails';
 
 
 function App() {
   return ( 
-    <InvoiceTable/>
+     <AvatarDetails/>
   );
 }
 
