@@ -1,11 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import UserCreateCard from './minimals/user-create-card/UserCreateCard';
-
+import ImageListPage from './minimals/image-page/ImageListPage';
 function App() {
   return ( 
-     <UserCreateCard/>
+     <ImageListPage/>
   );
 }
 
